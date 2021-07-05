@@ -7,6 +7,7 @@ pub struct Server
 
 }
 
+
 impl Server
 {
     pub fn new(addr:String) -> Self
@@ -23,11 +24,13 @@ impl Server
         
         loop
         {
-            let connection = listener.accept();
-            if connection.is_err()
+            let ret = listener.accept();
+            if ret.is_err()
             {
                 continue;
             }
+            //let connection = ret.ok();
+            //connection.
         }        
     }
 }
